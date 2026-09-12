@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 
-const VIDEO_SRC = '/portfoliovideo.mp4'
+const VIDEO_SRC = `${import.meta.env.BASE_URL}portfoliovideo.mp4`
 
 const SENSITIVITY = 0.8
 
