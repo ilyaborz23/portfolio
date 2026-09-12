@@ -11,6 +11,13 @@ export default function ScrubVideo() {
     const video = videoRef.current
     if (!video) return
 
+    const hasHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches
+    if (!hasHover) {
+      video.loop = true
+      video.play().catch(() => {})
+      return
+    }
+
     let prevX: number | null = null
     let targetTime = video.currentTime
     let rafId: number | null = null
