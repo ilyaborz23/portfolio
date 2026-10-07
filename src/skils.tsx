@@ -3,22 +3,38 @@ import { useEffect, useRef, useState } from 'react'
 const SKILL_CATEGORIES = [
   {
     name: 'Frontend',
-    skills: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React'],
+    skills: [
+      { name: 'HTML', url: 'https://developer.mozilla.org/en-US/docs/Web/HTML' },
+      { name: 'CSS', url: 'https://developer.mozilla.org/en-US/docs/Web/CSS' },
+      { name: 'JavaScript', url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' },
+      { name: 'TypeScript', url: 'https://www.typescriptlang.org' },
+      { name: 'React', url: 'https://react.dev' },
+    ],
     span: 'sm:col-span-3',
   },
   {
     name: 'Backend',
-    skills: ['Node.js', 'Python', 'REST API'],
+    skills: [
+      { name: 'Node.js', url: 'https://nodejs.org' },
+      { name: 'Python', url: 'https://www.python.org' },
+      { name: 'REST API', url: 'https://restfulapi.net' },
+    ],
     span: 'sm:col-span-2',
   },
   {
     name: 'Database',
-    skills: ['MongoDB', 'SQL'],
+    skills: [
+      { name: 'MongoDB', url: 'https://www.mongodb.com' },
+      { name: 'SQL', url: 'https://en.wikipedia.org/wiki/SQL' },
+    ],
     span: 'sm:col-span-2',
   },
   {
     name: 'Tools',
-    skills: ['Git', 'GitHub'],
+    skills: [
+      { name: 'Git', url: 'https://git-scm.com' },
+      { name: 'GitHub', url: 'https://github.com' },
+    ],
     span: 'sm:col-span-3',
   },
 ]
@@ -73,12 +89,15 @@ export default function Skills() {
             </h3>
             <div className="flex flex-wrap gap-2">
               {category.skills.map((skill) => (
-                <span
-                  key={skill}
+                <a
+                  key={skill.name}
+                  href={skill.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="rounded-full border border-white/40 px-4 py-1.5 text-[15px] text-white transition-all duration-200 hover:!-translate-y-0.5 hover:!border-white hover:!bg-white hover:!text-black group-hover:border-white/70"
                 >
-                  {skill}
-                </span>
+                  {skill.name}
+                </a>
               ))}
             </div>
           </div>

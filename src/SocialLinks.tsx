@@ -1,7 +1,7 @@
 const SOCIAL_LINKS = [
   { label: 'GitHub', href: 'https://github.com/ilyaborz23' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ilya-borzyh/' },
-  { label: 'Instagram', href: 'https://www.instagram.com/ilyaborzzz/' },
+  { label: 'Instagram', href: 'https://www.instagram.com/ilya___ai/' },
 ]
 
 export default function SocialLinks() {
