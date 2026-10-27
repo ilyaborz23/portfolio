@@ -11,12 +11,12 @@ export default function Navbar() {
   return (
     <>
       <nav className="fixed inset-x-0 top-0 z-50 flex items-center justify-center px-5 py-4 sm:px-8 sm:py-5">
-        <div className="hidden flex-row items-center gap-3 text-[16px] text-white md:flex">
+        <div className="hidden flex-row items-center gap-3 text-[16px] text-ink md:flex">
           {NAV_LINKS.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="flex items-center justify-center rounded-full border border-white/40 px-5 py-[0.4em] transition-colors duration-200 hover:bg-white hover:text-black"
+              className="flex items-center justify-center rounded-full border border-ink/25 px-5 py-[0.4em] transition-colors duration-200 hover:bg-ink hover:text-night"
             >
               {link.label}
             </a>
@@ -30,17 +30,17 @@ export default function Navbar() {
           className="fixed right-5 top-4 z-50 flex flex-col items-center gap-[5px] sm:right-8 sm:top-5 md:hidden"
         >
           <span
-            className={`h-[2px] w-6 bg-white transition-all duration-300 ${
+            className={`h-[2px] w-6 bg-ink transition-all duration-300 ${
               menuOpen ? 'translate-y-[7px] rotate-45' : ''
             }`}
           />
           <span
-            className={`h-[2px] w-6 bg-white transition-all duration-300 ${
+            className={`h-[2px] w-6 bg-ink transition-all duration-300 ${
               menuOpen ? 'opacity-0' : 'opacity-100'
             }`}
           />
           <span
-            className={`h-[2px] w-6 bg-white transition-all duration-300 ${
+            className={`h-[2px] w-6 bg-ink transition-all duration-300 ${
               menuOpen ? '-translate-y-[7px] -rotate-45' : ''
             }`}
           />
@@ -48,7 +48,7 @@ export default function Navbar() {
       </nav>
 
       <div
-        className={`fixed inset-0 z-40 flex flex-col items-start justify-center gap-8 bg-black/90 px-8 backdrop-blur-sm transition-opacity duration-300 md:hidden ${
+        className={`fixed inset-0 z-40 flex flex-col items-start justify-center gap-8 bg-night/95 px-8 backdrop-blur-sm transition-opacity duration-300 md:hidden ${
           menuOpen ? 'opacity-100' : 'pointer-events-none opacity-0'
         }`}
       >
@@ -56,7 +56,7 @@ export default function Navbar() {
           <a
             key={link.label}
             href={link.href}
-            className="inline-flex items-center justify-center rounded-full border border-white/40 px-6 py-[0.3em] text-[24px] font-medium text-white transition-colors duration-200 hover:bg-white hover:text-black"
+            className="inline-flex items-center justify-center rounded-full border border-ink/25 px-6 py-[0.3em] text-[24px] font-medium text-ink transition-colors duration-200 hover:bg-ink hover:text-night"
             onClick={() => setMenuOpen(false)}
           >
             {link.label}

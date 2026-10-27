@@ -68,7 +68,7 @@ export default function Skills() {
       className="relative z-10 flex min-h-screen flex-col justify-center px-5 py-20 sm:px-8 md:px-10"
     >
       <h2
-        className={`mb-10 inline-block w-fit rounded-full border border-white/40 px-6 py-2 text-[40px] font-medium text-white transition-all duration-700 ease-out sm:text-[48px] ${
+        className={`mb-10 inline-block w-fit rounded-full border border-ink/25 px-6 py-2 text-[40px] font-medium text-ink transition-all duration-700 ease-out sm:text-[48px] ${
           visible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
         }`}
       >
@@ -79,12 +79,12 @@ export default function Skills() {
         {SKILL_CATEGORIES.map((category, index) => (
           <div
             key={category.name}
-            className={`group rounded-3xl border border-white/40 bg-black/10 px-6 py-5 backdrop-blur-[2px] transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-white hover:bg-black/15 ${category.span} ${
+            className={`group rounded-3xl border border-ink/25 bg-night/40 px-6 py-5 backdrop-blur-[2px] transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-ink hover:bg-night/50 ${category.span} ${
               visible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
             }`}
             style={{ transitionDelay: visible ? `${index * 140}ms` : '0ms' }}
           >
-            <h3 className="mb-4 text-[22px] font-medium text-white transition-colors duration-300">
+            <h3 className="mb-4 text-[22px] font-medium text-ink transition-colors duration-300">
               {category.name}
             </h3>
             <div className="flex flex-wrap gap-2">
@@ -94,7 +94,7 @@ export default function Skills() {
                   href={skill.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full border border-white/40 px-4 py-1.5 text-[15px] text-white transition-all duration-200 hover:!-translate-y-0.5 hover:!border-white hover:!bg-white hover:!text-black group-hover:border-white/70"
+                  className="rounded-full border border-ink/25 px-4 py-1.5 text-[15px] text-ink transition-all duration-200 hover:!-translate-y-0.5 hover:!border-ink hover:!bg-ink hover:!text-night group-hover:border-ink/60"
                 >
                   {skill.name}
                 </a>

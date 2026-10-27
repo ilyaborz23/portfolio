@@ -25,16 +25,16 @@ const PROJECTS: Project[] = [
 export default function MyProjects() {
   return (
     <section id="projects" className="relative z-10 flex min-h-screen flex-col justify-center px-5 py-20 sm:px-8 md:px-10">
-      <h2 className="mb-6 inline-block w-fit rounded-full border border-white/40 px-6 py-2 text-[40px] font-medium text-white sm:text-[48px]">My Projects</h2>
+      <h2 className="mb-6 inline-block w-fit rounded-full border border-ink/25 px-6 py-2 text-[40px] font-medium text-ink sm:text-[48px]">My Projects</h2>
       <div className="grid gap-6 sm:grid-cols-2">
         {PROJECTS.map((project) => (
-          <div key={project.title} className="flex flex-col rounded-2xl border border-white/20 bg-black/60 p-6 backdrop-blur-md">
-            <h3 className="mb-2 text-[20px] font-medium text-white">{project.title}</h3>
-            <p className="text-[15px] text-white/70">{project.description}</p>
+          <div key={project.title} className="flex flex-col rounded-2xl border border-ink/15 bg-night/50 p-6 backdrop-blur-md">
+            <h3 className="mb-2 text-[20px] font-medium text-ink">{project.title}</h3>
+            <p className="text-[15px] text-ink/70">{project.description}</p>
             {project.tags && (
               <div className="mt-4 flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
-                  <span key={tag} className="rounded-full border border-white/20 px-3 py-1 text-[13px] text-white/80">{tag}</span>
+                  <span key={tag} className="rounded-full border border-ink/15 px-3 py-1 text-[13px] text-ink/80">{tag}</span>
                 ))}
               </div>
             )}
@@ -43,7 +43,7 @@ export default function MyProjects() {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-5 inline-block w-fit rounded-full border border-white/40 px-5 py-2 text-[14px] text-white transition-colors hover:bg-white hover:text-black"
+                className="mt-5 inline-block w-fit rounded-full border border-ink/25 px-5 py-2 text-[14px] text-ink transition-colors hover:bg-ink hover:text-night"
               >
                 View on GitHub →
               </a>

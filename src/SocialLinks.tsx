@@ -46,7 +46,7 @@ export default function SocialLinks() {
           rel="noopener noreferrer"
           aria-label={link.label}
           title={link.label}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-black/10 text-white backdrop-blur-[2px] transition-all duration-200 hover:-translate-y-0.5 hover:border-white hover:bg-white hover:text-black"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-ink/25 bg-night/40 text-ink backdrop-blur-[2px] transition-all duration-200 hover:-translate-y-0.5 hover:border-ink hover:bg-ink hover:text-night"
         >
           <svg
             viewBox="0 0 24 24"

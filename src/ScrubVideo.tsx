@@ -70,14 +70,17 @@ export default function ScrubVideo() {
   }, [])
 
   return (
-    <video
-      ref={videoRef}
-      className="fixed inset-0 z-0 h-full w-full object-cover"
-      style={{ objectPosition: '70% center' }}
-      src={VIDEO_SRC}
-      muted
-      playsInline
-      preload="auto"
-    />
+    <>
+      <video
+        ref={videoRef}
+        className="fixed inset-0 z-0 h-full w-full object-cover"
+        style={{ objectPosition: '70% center', filter: 'saturate(0.6) brightness(0.8)' }}
+        src={VIDEO_SRC}
+        muted
+        playsInline
+        preload="auto"
+      />
+      <div className="pointer-events-none fixed inset-0 z-0 bg-gradient-to-r from-night/85 via-night/55 to-night/25" />
+    </>
   )
 }

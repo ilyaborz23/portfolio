@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
-:root {
-  --font-heading: 'HelveticaNowDisplay-Medium', 'Helvetica Neue', Arial, sans-serif;
-  --font-body: 'HelveticaNowDisplayW01-Rg', 'Helvetica Neue', Arial, sans-serif;
+@theme {
+  --font-sans: 'Manrope', system-ui, sans-serif;
+  --font-display: 'Space Grotesk', 'Manrope', system-ui, sans-serif;
+  --color-ink: #f1ebe2;
+  --color-night: #141210;
 }
 
 html {
@@ -10,8 +12,16 @@ html {
 }
 
 body {
-  font-family: var(--font-body);
   margin: 0;
+  background: var(--color-night);
+  color: var(--color-ink);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
 }
 
 section[id] {
