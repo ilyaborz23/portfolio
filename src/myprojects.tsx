@@ -13,7 +13,13 @@ const PROJECTS: Project[] = [
     tags: ['React', 'TypeScript', 'Vite', 'React Router'],
     link: 'https://github.com/ilyaborz23/Weather',
   },
-  { title: 'Project Two', description: 'A short description of this project.' },
+  {
+    title: 'Work Schedule',
+    description:
+      'Weekly shift scheduling for a hospital department. Employees request shifts, the admin approves them and builds the week, and the schedule exports to Excel. English and Hebrew, with scheduling rules checked on the server.',
+    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Express', 'PostgreSQL'],
+    link: 'https://github.com/ilyaborz23/Work-schedule',
+  },
 ]
 
 export default function MyProjects() {
