@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { SocialIcon } from './SocialLinks'
 import { SOCIAL_LINKS } from '../data/socials'
 
@@ -11,10 +11,22 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 24)
+    handleScroll()
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
     <>
-      <nav className="fixed inset-x-0 top-0 z-50 flex h-[72px] items-center justify-center px-5 sm:h-[80px] sm:px-8">
+      <nav
+        className={`fixed inset-x-0 top-0 z-50 flex h-[72px] items-center justify-center border-b px-5 transition-colors duration-300 sm:h-[80px] sm:px-8 ${
+          scrolled && !menuOpen ? 'border-ink/10 bg-night/70 backdrop-blur-md' : 'border-transparent'
+        }`}
+      >
         <a
           href="#top"
           className="fixed left-5 top-4 flex h-10 items-center text-[17px] font-semibold tracking-tight text-ink sm:left-8 sm:top-5"

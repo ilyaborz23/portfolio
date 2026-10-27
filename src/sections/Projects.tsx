@@ -1,5 +1,7 @@
 import { SectionHeading } from '../components/SectionHeading'
 import { revealClass, useReveal } from '../hooks/useReveal'
+import devMeetImage from '../assets/projects/devmeet.webp'
+import workScheduleImage from '../assets/projects/work-schedule.webp'
 
 type Project = {
   title: string
@@ -7,6 +9,7 @@ type Project = {
   tags?: string[]
   link?: string
   live?: string
+  image?: string
 }
 
 const PROJECTS: Project[] = [
@@ -17,6 +20,7 @@ const PROJECTS: Project[] = [
     tags: ['React', 'TypeScript', 'Tailwind CSS', 'Express', 'PostgreSQL'],
     link: 'https://github.com/ilyaborz23/Work-schedule',
     live: 'https://work-schedule.up.railway.app',
+    image: workScheduleImage,
   },
   {
     title: 'DevMeet',
@@ -24,6 +28,7 @@ const PROJECTS: Project[] = [
       'Meeting manager for development teams. Pick a team to see its timetable, book, edit or delete meetings, with durations shown as bars and upcoming and past meetings colour-coded. Validation runs on both the client and the server.',
     tags: ['React', 'TypeScript', 'React Router', 'Express', 'PostgreSQL'],
     link: 'https://github.com/ilyaborz23/DevMeet',
+    image: devMeetImage,
   },
   {
     title: 'Weather Info',
@@ -47,6 +52,22 @@ export default function Projects() {
             className={`group flex flex-col rounded-3xl border border-ink/10 bg-night/60 p-7 backdrop-blur-md hover:border-ink/30 sm:p-8 ${revealClass(visible)}`}
             style={{ transitionDelay: visible ? `${150 + index * 140}ms` : '0ms' }}
           >
+            <div className="mb-7 aspect-[16/9] overflow-hidden rounded-2xl border border-ink/10 bg-gradient-to-br from-ink/10 to-transparent">
+              {project.image ? (
+                <img
+                  src={project.image}
+                  alt={`${project.title} screenshot`}
+                  loading="lazy"
+                  className="h-full w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                />
+              ) : (
+                <div className="flex h-full items-end p-6">
+                  <span className="text-[40px] font-semibold leading-none text-ink/15 sm:text-[52px]" style={{ fontFamily: 'var(--font-display)' }}>
+                    {project.title}
+                  </span>
+                </div>
+              )}
+            </div>
             <div className="mb-5 flex items-baseline justify-between gap-4">
               <h3 className="text-[26px] font-semibold text-ink">{project.title}</h3>
               <span className="text-[13px] font-medium tracking-[0.2em] text-ink/40">{String(index + 1).padStart(2, '0')}</span>

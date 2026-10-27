@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 
 const VIDEO_SRC = `${import.meta.env.BASE_URL}portfoliovideo.mp4`
+const POSTER_SRC = `${import.meta.env.BASE_URL}poster.webp`
 
 const SENSITIVITY = 0.8
 
@@ -12,7 +13,9 @@ export default function ScrubVideo() {
     if (!video) return
 
     const hasHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (!hasHover) {
+      if (reducedMotion) return
       video.loop = true
       video.play().catch(() => {})
       return
@@ -76,6 +79,7 @@ export default function ScrubVideo() {
         className="fixed inset-0 z-0 h-full w-full object-cover"
         style={{ objectPosition: '70% center', filter: 'saturate(0.85)' }}
         src={VIDEO_SRC}
+        poster={POSTER_SRC}
         muted
         playsInline
         preload="auto"
