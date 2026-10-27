@@ -16,7 +16,14 @@ const PROJECTS: Project[] = [
       'Weekly shift scheduling for a hospital department. Employees request shifts, the admin approves them and builds the week, and the schedule exports to Excel. English and Hebrew, with scheduling rules checked on the server.',
     tags: ['React', 'TypeScript', 'Tailwind CSS', 'Express', 'PostgreSQL'],
     link: 'https://github.com/ilyaborz23/Work-schedule',
-    live: 'https://work-schedule-production-835b.up.railway.app',
+    live: 'https://work-schedule.up.railway.app',
+  },
+  {
+    title: 'DevMeet',
+    description:
+      'Meeting manager for development teams. Pick a team to see its timetable, book, edit or delete meetings, with durations shown as bars and upcoming and past meetings colour-coded. Validation runs on both the client and the server.',
+    tags: ['React', 'TypeScript', 'React Router', 'Express', 'PostgreSQL'],
+    link: 'https://github.com/ilyaborz23/DevMeet',
   },
   {
     title: 'Weather Info',
@@ -60,7 +67,7 @@ export default function Projects() {
                   rel="noopener noreferrer"
                   className="rounded-full bg-ink px-5 py-2 text-[14px] font-semibold text-night transition-transform duration-200 hover:-translate-y-0.5"
                 >
-                  Live demo ↗
+                  Visit site ↗
                 </a>
               )}
               {project.link && (
