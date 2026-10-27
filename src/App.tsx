@@ -1,9 +1,11 @@
-import ScrubVideo from './ScrubVideo'
-import Navbar from './Navbar'
-import About from './about'
-import Skills from './skils'
-import MyProjects from './myprojects'
-import SocialLinks from './SocialLinks'
+import ScrubVideo from './components/ScrubVideo'
+import Navbar from './components/Navbar'
+import SocialLinks from './components/SocialLinks'
+import Hero from './sections/Hero'
+import About from './sections/About'
+import Skills from './sections/Skills'
+import Projects from './sections/Projects'
+import Contact from './sections/Contact'
 
 function App() {
   return (
@@ -11,9 +13,11 @@ function App() {
       <ScrubVideo />
       <Navbar />
       <SocialLinks />
+      <Hero />
       <About />
       <Skills />
-      <MyProjects />
+      <Projects />
+      <Contact />
     </>
   )
 }
